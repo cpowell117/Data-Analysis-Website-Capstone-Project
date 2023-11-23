@@ -1,42 +1,37 @@
-// uploadData.js
+import express from "express";
+import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+import helmet, { crossOriginResourcePolicy } from "helmet";
+import morgan from "morgan";
+import kpiRoutes from "./routes/kpi.js";
+import KPI from "./models/KPI.js";
+import { kpis } from "./data/data.js";
 
-const express = require('express');
-const mongoose = require('mongoose');
+/* CONFIGURATION */
+dotenv.config();
 const app = express();
+app.use(express.json());
+app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+app.use(morgan("common"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
-const uri = 'mongodb+srv://amandaomasta1:1234@cluster0.4djec6h.mongodb.net/?retryWrites=true&w=majority';
+/* ROUTES */
+app.use("/kpi", kpiRoutes);
 
-async function connect() {
-    try {
-        await mongoose.connect(uri);
-        console.log('Connected to MongoDB');
-    } catch (error) {
-        console.error(error);
-    }
-}
+/* MONGOOSE SETUP */
+const PORT = process.env.PORT || 9000;
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(async () => {
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
-connect();
-
-// Define a simple mongoose model
-const Item = mongoose.model('Item', { name: String });
-
-// Set up a route for uploading data
-app.post('/upload', async (req, res) => {
-    try {
-        // Assuming the uploaded data is in the request body
-        const data = req.body;
-
-        // Insert the data into MongoDB
-        await Item.insertMany(data);
-
-        res.status(200).json({ message: 'Data uploaded successfully' });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
-
-const PORT = process.env.PORT || 1337;
-app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
-});
+    /* ADD DATA ONE TIME ONLY OR AS NEEDED */
+    //await mongoose.connection.db.dropDatabase();
+    //KPI.insertMany(kpis);
+  })
+  .catch((error) => console.log(`${error} did not connect`));
