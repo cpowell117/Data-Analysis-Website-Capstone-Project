@@ -57,11 +57,11 @@ const teamMembers = [
 const AboutUs = () => {
   return (
     <Container component="main" maxWidth="lg">
-      <Typography variant="h2" gutterBottom>
+      <Typography variant="h2" gutterBottom color="white">
         About Us
       </Typography>
       <Paper elevation={3} sx={{ p: 4, mt: 4, mb: 4 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom color="text.primary">
           Meet Our Team
         </Typography>
         <Grid container spacing={4}>

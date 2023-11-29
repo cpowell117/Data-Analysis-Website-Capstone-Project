@@ -24,13 +24,14 @@ const Navbar = (props: Props) => {
         <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
           <Link
             to="/"
-            onClick={() => setSelected("dashboard")}
+            onClick={() => setSelected("home")}
             style={{
-              color: selected === "dashboard" ? "inherit" : palette.grey[700],
+              color:
+                selected === "home" ? palette.primary.main : palette.grey[700],
               textDecoration: "inherit",
             }}
           >
-            Dashboard
+            Home
           </Link>
         </Box>
         <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
@@ -44,6 +45,18 @@ const Navbar = (props: Props) => {
             }}
           >
             About Us
+          </Link>
+        </Box>
+        <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
+          <Link
+            to="/dashboard"
+            onClick={() => setSelected("dashboard")}
+            style={{
+              color: selected === "dashboard" ? "inherit" : palette.grey[700],
+              textDecoration: "inherit",
+            }}
+          >
+            Dashboard
           </Link>
         </Box>
         <Box sx={{ "&:hover": { color: palette.primary[100] } }}>

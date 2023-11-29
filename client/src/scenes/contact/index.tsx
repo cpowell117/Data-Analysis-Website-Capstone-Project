@@ -12,11 +12,11 @@ const ContactUs = () => {
   return (
     <Container component="main" maxWidth="lg">
       <Box my={4}>
-        <Typography variant="h2" component="h1" gutterBottom>
+        <Typography variant="h2" component="h1" gutterBottom color="white">
           Contact Us
         </Typography>
         <Paper style={{ padding: "20px", backgroundColor: "#f7f7f7" }}>
-          <Typography variant="h6" component="h2">
+          <Typography variant="h6" component="h2" color="text.primary">
             Get in Touch
           </Typography>
           <Typography paragraph>
