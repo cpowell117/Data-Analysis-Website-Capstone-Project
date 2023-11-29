@@ -30,7 +30,20 @@ const Navbar = (props: Props) => {
               textDecoration: "inherit",
             }}
           >
-            dashboard
+            Dashboard
+          </Link>
+        </Box>
+        <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
+          <Link
+            to="/about"
+            onClick={() => setSelected("about")}
+            style={{
+              color:
+                selected === "about" ? palette.primary.main : palette.grey[700],
+              textDecoration: "inherit",
+            }}
+          >
+            About Us
           </Link>
         </Box>
         <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
@@ -42,7 +55,22 @@ const Navbar = (props: Props) => {
               textDecoration: "inherit",
             }}
           >
-            predictions
+            Predictions
+          </Link>
+        </Box>
+        <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
+          <Link
+            to="/contact"
+            onClick={() => setSelected("contact")}
+            style={{
+              color:
+                selected === "contact"
+                  ? palette.primary.main
+                  : palette.grey[700],
+              textDecoration: "inherit",
+            }}
+          >
+            Contact
           </Link>
         </Box>
       </FlexBetween>
