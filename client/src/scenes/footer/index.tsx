@@ -3,14 +3,11 @@
 import React from "react";
 import { Box, Container, Typography, Link } from "@mui/material";
 
-const darkGreenHex = "#447370"; 
+const FSURed = "#7B2F3D"; 
 
 const Footer = () => {
   return (
-    <Box
-      component="footer"
-      sx={{ bgcolor: darkGreenHex, color: "white", py: 6 }}
-    >
+    <Box component="footer" sx={{ bgcolor: FSURed, color: "white", py: 6 }}>
       <Container maxWidth="lg" sx={{ textAlign: "center" }}>
         <Typography variant="subtitle1" component="p">
           © {new Date().getFullYear()} Finanseer, Inc. All rights reserved.

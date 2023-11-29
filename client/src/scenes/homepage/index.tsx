@@ -31,7 +31,7 @@ const HomePage = () => {
             component="h1"
             sx={{ color: "#fff", textAlign: "center" }}
           >
-            Welcome to Finanseer
+            Welcome to the Future of Data Analyst
           </Typography>
           <video
             autoPlay

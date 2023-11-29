@@ -95,14 +95,14 @@ const Predictions = () => {
           <Line
             type="monotone"
             dataKey="Actual Revenue"
-            stroke={palette.primary.main}
+            stroke={palette.primary[300]}
             strokeWidth={0}
             dot={{ strokeWidth: 5 }}
           />
           <Line
             type="monotone"
             dataKey="Regression Line"
-            stroke="#8884d8"
+            stroke={palette.tertiary[500]}
             dot={false}
           />
           {isPredictions && (

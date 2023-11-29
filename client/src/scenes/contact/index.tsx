@@ -48,8 +48,13 @@ const ContactUs = () => {
             />
             <Button
               variant="contained"
-              color="primary"
-              style={{ marginTop: "20px" }}
+              sx={{
+                marginTop: "20px",
+                backgroundColor: "#7B2F3D",
+                "&:hover": {
+                  backgroundColor: "#6a2933", // A darker shade when hovering, adjust it as needed
+                },
+              }}
             >
               Send Message
             </Button>

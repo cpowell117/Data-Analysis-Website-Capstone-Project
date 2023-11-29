@@ -123,7 +123,7 @@ const Row1 = () => {
               type="monotone"
               dataKey="revenue"
               dot={true}
-              stroke={palette.primary.main}
+              stroke={palette.tertiary[500]}
               fillOpacity={1}
               fill="url(#colorRevenue)"
             />
@@ -131,7 +131,7 @@ const Row1 = () => {
               type="monotone"
               dataKey="expenses"
               dot={true}
-              stroke={palette.primary.main}
+              stroke={palette.tertiary[500]}
               fillOpacity={1}
               fill="url(#colorExpenses)"
             />
@@ -192,7 +192,7 @@ const Row1 = () => {
               yAxisId="right"
               type="monotone"
               dataKey="revenue"
-              stroke={palette.primary.main}
+              stroke={palette.primary[300]}
             />
           </LineChart>
         </ResponsiveContainer>
