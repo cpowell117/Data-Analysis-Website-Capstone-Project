@@ -9,6 +9,7 @@ import Predictions from "@/scenes/predictions";
 import AboutUs from "@/scenes/aboutus";
 import ContactUs from "@/scenes/contact";
 import HomePage from "./scenes/homepage";
+import Form from "./scenes/form";
 
 function App() {
   const theme = useMemo(() => createTheme(themeSettings), []);
@@ -22,6 +23,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/form" element={<Form />} />
               <Route path="predictions" element={<Predictions />} />
               <Route path="about" element={<AboutUs />} />
               <Route path="contact" element={<ContactUs />} />
